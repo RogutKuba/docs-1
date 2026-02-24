@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* Use IBM Plex Mono for all code and monospace text */
+code, pre, kbd, samp {
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* Inline code background matches theme blues */
+:not(pre) > code {
+  background-color: #E4F1FF !important;
+}
+.dark :not(pre) > code {
+  background-color: #161F34 !important;
+}
+
+/* Inline code in callouts — subtle tint of callout color */
+[data-callout-type="note"] :not(pre) > code {
+  background-color: #DBEAFE !important;
+}
+.dark [data-callout-type="note"] :not(pre) > code {
+  background-color: #1E3A5F !important;
+}
+[data-callout-type="info"] :not(pre) > code {
+  background-color: #E8E8E8 !important;
+}
+.dark [data-callout-type="info"] :not(pre) > code {
+  background-color: #2A2A2A !important;
+}
+[data-callout-type="tip"] :not(pre) > code,
+[data-callout-type="check"] :not(pre) > code {
+  background-color: #DCFCE7 !important;
+}
+.dark [data-callout-type="tip"] :not(pre) > code,
+.dark [data-callout-type="check"] :not(pre) > code {
+  background-color: #14532D !important;
+}
+[data-callout-type="warning"] :not(pre) > code {
+  background-color: #FEF3C7 !important;
+}
+.dark [data-callout-type="warning"] :not(pre) > code {
+  background-color: #422006 !important;
+}
+
+/* Make sidebar title heavier weight */
+#sidebar-title {
+    font-weight: 600 !important;
+  }
+
+/* Inline code links have same color and underline as regular links */
+a code,
+a[href] code {
+  color: inherit !important;
+  text-decoration: none !important; /* Remove underline from code itself */
+}
+
+/* Ensure callout links and lists match callout text formatting */
+.callout a,
+[class*="callout"] a {
+  font-size: inherit !important; /* Match callout text size */
+  color: inherit !important; /* Match callout text color */
+}
+
+.callout ul,
+.callout ol,
+.callout li,
+[class*="callout"] ul,
+[class*="callout"] ol,
+[class*="callout"] li {
+  font-size: inherit !important; /* Match callout text size */
+  color: inherit !important; /* Match callout text color */
+  line-height: inherit !important; /* Match callout line height */
+}
+
+.callout li::marker,
+[class*="callout"] li::marker,
+[data-callout-type] li::marker {
+  color: inherit !important;
+}
+[data-callout-type] ul,
+[data-callout-type] ol {
+  color: inherit !important;
+}
+
+.callout p,
+[class*="callout"] p {
+  font-size: inherit !important; /* Match callout text size */
+  color: inherit !important; /* Match callout text color */
+}
+
+/* Ensure bold and italic text inherit callout formatting */
+.callout strong,
+.callout b,
+.callout em,
+.callout i,
+[class*="callout"] strong,
+[class*="callout"] b,
+[class*="callout"] em,
+[class*="callout"] i {
+  font-size: inherit !important; /* Match callout text size */
+  color: inherit !important; /* Match callout text color */
+}
+
+/* Ensure mermaid diagrams are centered */
+.mermaid {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+/* Fix vertical alignment in table cells with mixed content (text and images) */
+.prose table td, article table td, .markdown table td, .content table td, [class*="prose"] table td,
+.prose table th, article table th, .markdown table th, .content table th, [class*="prose"] table th {
+  vertical-align: middle !important; /* Center align content vertically */
+  line-height: 1.5 !important; /* Consistent line height */
+}
+
+/* Hide pagination */
+#pagination {
+    display: none;
+  }
+
+/* Improve banner link readability in light mode */
+#banner a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Compact first column for multi agent pattern comparison tables (no horizontal scroll) */
+.compact-first-col [data-table-wrapper] {
+  overflow-x: visible !important;
+}
+
+.compact-first-col table {
+  table-layout: auto !important;
+  width: 100% !important;
+}
+
+.compact-first-col table td,
+.compact-first-col table th {
+  min-width: 0 !important;
+}
+
+.compact-first-col table td:first-child,
+.compact-first-col table th:first-child {
+  width: 1% !important;
+  white-space: nowrap !important;
+}
+
+/* Hide auto-generated callouts on home page */
+.home-page ~ :is(.callout, [data-callout-type]) {
+  display: none !important;
+}
+
+/* Card background matches page background */
+.card {
+  background-color: transparent !important;
+}
+
+/* Force vertical alignment to top for table cells on products page */
+.products-page table td.tdlist,
+.products-page table th.tdlist {
+  vertical-align: top !important;
+}
