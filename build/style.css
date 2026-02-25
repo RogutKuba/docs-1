@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* TWK Lausanne — italic and bold variants (regular weights loaded by Mintlify via docs.json) */
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url('/fonts/TWKLausanne-250Italic.woff2') format('woff2');
+  font-weight: 250;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url('/fonts/TWKLausanne-350.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url('/fonts/TWKLausanne-350Italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url('/fonts/TWKLausanne-400Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Use IBM Plex Mono for all code and monospace text */
+code, pre, kbd, samp {
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* Inline code background matches theme blues */
+:not(pre) > code {
+  background-color: #E4F1FF !important;
+}
+.dark :not(pre) > code {
+  background-color: #161F34 !important;
+}
+
+/* Inline code in callouts — subtle overlay on filled background */
+[data-callout-type] :not(pre) > code {
+  background-color: #FFFFFF20 !important;
+}
+
+/* Heading text color — exclude callouts so headings inside filled callouts inherit callout text color */
+h1, h2, h3, h4 {
+  color: #030710 !important;
+}
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: inherit !important;
+}
+[data-callout-type] :is(h1, h2, h3, h4) {
+  color: inherit !important;
+}
+
+/* Make sidebar title heavier weight */
+#sidebar-title {
+  font-weight: 600 !important;
+}
+
+/* Lists — match body text color and font in page content */
+.prose, [class*="prose"] {
+  --tw-prose-counters: currentColor !important;
+  --tw-prose-bullets: currentColor !important;
+}
+.mdx-content li::marker {
+  font-family: 'TWK Lausanne', sans-serif !important;
+}
+
+/* Inline code links inherit color from parent link */
+a code {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Ensure mermaid diagrams are centered */
+.mermaid {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fix vertical alignment in table cells with mixed content (text and images) */
+.prose table td, article table td, .markdown table td, .content table td, [class*="prose"] table td,
+.prose table th, article table th, .markdown table th, .content table th, [class*="prose"] table th {
+  vertical-align: middle !important;
+  line-height: 1.5 !important;
+}
+
+/* Hide pagination */
+#pagination {
+  display: none;
+}
+
+/* Improve banner link readability in light mode */
+#banner a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Compact first column for multi agent pattern comparison tables (no horizontal scroll) */
+.compact-first-col [data-table-wrapper] {
+  overflow-x: visible !important;
+}
+
+.compact-first-col table {
+  table-layout: auto !important;
+  width: 100% !important;
+}
+
+.compact-first-col table td,
+.compact-first-col table th {
+  min-width: 0 !important;
+}
+
+.compact-first-col table td:first-child,
+.compact-first-col table th:first-child {
+  width: 1% !important;
+  white-space: nowrap !important;
+}
+
+/* Hide auto-generated callouts on home page */
+.home-page ~ :is(.callout, [data-callout-type]) {
+  display: none !important;
+}
+
+/* Info — Plum filled */
+[data-callout-type="info"] {
+  background-color: #885270 !important;
+  border-color: #885270 !important;
+}
+[data-callout-type="info"] [data-component-part="callout-content"],
+[data-callout-type="info"] [data-component-part="callout-content"] *,
+[data-callout-type="info"] [data-component-part="callout-icon"] svg {
+  color: #EBD0F0 !important;
+}
+.dark [data-callout-type="info"] {
+  background-color: #441E33 !important;
+  border-color: #441E33 !important;
+}
+.dark [data-callout-type="info"] [data-component-part="callout-content"],
+.dark [data-callout-type="info"] [data-component-part="callout-content"] *,
+.dark [data-callout-type="info"] [data-component-part="callout-icon"] svg {
+  color: #C78EAD !important;
+}
+
+/* Note — Blue filled */
+[data-callout-type="note"] {
+  background-color: #40668D !important;
+  border-color: #40668D !important;
+}
+[data-callout-type="note"] [data-component-part="callout-content"],
+[data-callout-type="note"] [data-component-part="callout-content"] *,
+[data-callout-type="note"] [data-component-part="callout-icon"] svg {
+  color: #D6EEFF !important;
+}
+.dark [data-callout-type="note"] {
+  background-color: #2F4B68 !important;
+  border-color: #2F4B68 !important;
+}
+.dark [data-callout-type="note"] [data-component-part="callout-content"],
+.dark [data-callout-type="note"] [data-component-part="callout-content"] *,
+.dark [data-callout-type="note"] [data-component-part="callout-icon"] svg {
+  color: #D6EEFF !important;
+}
+
+/* Tip & Check — Green filled */
+[data-callout-type="tip"],
+[data-callout-type="check"] {
+  background-color: #6E8900 !important;
+  border-color: #6E8900 !important;
+}
+[data-callout-type="tip"] [data-component-part="callout-content"],
+[data-callout-type="tip"] [data-component-part="callout-content"] *,
+[data-callout-type="tip"] [data-component-part="callout-icon"] svg,
+[data-callout-type="check"] [data-component-part="callout-content"],
+[data-callout-type="check"] [data-component-part="callout-content"] *,
+[data-callout-type="check"] [data-component-part="callout-icon"] svg {
+  color: #E3FF8F !important;
+}
+.dark [data-callout-type="tip"],
+.dark [data-callout-type="check"] {
+  background-color: #2E3900 !important;
+  border-color: #2E3900 !important;
+}
+.dark [data-callout-type="tip"] [data-component-part="callout-content"],
+.dark [data-callout-type="tip"] [data-component-part="callout-content"] *,
+.dark [data-callout-type="tip"] [data-component-part="callout-icon"] svg,
+.dark [data-callout-type="check"] [data-component-part="callout-content"],
+.dark [data-callout-type="check"] [data-component-part="callout-content"] *,
+.dark [data-callout-type="check"] [data-component-part="callout-icon"] svg {
+  color: #E3FF8F !important;
+}
+
+/* Warning — Peach filled */
+[data-callout-type="warning"] {
+  background-color: #FBB0A5 !important;
+  border-color: #FBB0A5 !important;
+}
+[data-callout-type="warning"] [data-component-part="callout-content"],
+[data-callout-type="warning"] [data-component-part="callout-content"] *,
+[data-callout-type="warning"] [data-component-part="callout-icon"] svg {
+  color: #634643 !important;
+}
+.dark [data-callout-type="warning"] {
+  background-color: #7D2219 !important;
+  border-color: #7D2219 !important;
+}
+.dark [data-callout-type="warning"] [data-component-part="callout-content"],
+.dark [data-callout-type="warning"] [data-component-part="callout-content"] *,
+.dark [data-callout-type="warning"] [data-component-part="callout-icon"] svg {
+  color: #F8E8E6 !important;
+}
+
+/* Custom — Purple filled */
+[data-callout-type="callout"] {
+  background-color: #7E65AE !important;
+  border-color: #7E65AE !important;
+}
+[data-callout-type="callout"] [data-component-part="callout-content"],
+[data-callout-type="callout"] [data-component-part="callout-content"] * {
+  color: #FDF3FF !important;
+}
+[data-callout-type="callout"] [data-component-part="callout-icon"] svg {
+  background-color: #FDF3FF !important;
+}
+.dark [data-callout-type="callout"] {
+  background-color: #504B5F !important;
+  border-color: #504B5F !important;
+}
+.dark [data-callout-type="callout"] [data-component-part="callout-content"],
+.dark [data-callout-type="callout"] [data-component-part="callout-content"] * {
+  color: #D5C3F7 !important;
+}
+.dark [data-callout-type="callout"] [data-component-part="callout-icon"] svg {
+  background-color: #D5C3F7 !important;
+}
+
+/* Source links footer callouts — subtle grey */
+.source-links [data-callout-type] {
+  background-color: #F5F5F7 !important;
+  border-color: #F5F5F7 !important;
+}
+.source-links [data-callout-type] [data-component-part="callout-content"],
+.source-links [data-callout-type] [data-component-part="callout-content"] *,
+.source-links [data-callout-type] [data-component-part="callout-icon"] svg {
+  color: #9B9BA5 !important;
+}
+.source-links [data-callout-type] [data-component-part="callout-icon"] svg {
+  background-color: #9B9BA5 !important;
+}
+.dark .source-links [data-callout-type] {
+  background-color: #1A1A2E !important;
+  border-color: #1A1A2E !important;
+}
+.dark .source-links [data-callout-type] [data-component-part="callout-content"],
+.dark .source-links [data-callout-type] [data-component-part="callout-content"] *,
+.dark .source-links [data-callout-type] [data-component-part="callout-icon"] svg {
+  color: #7A7A8A !important;
+}
+.dark .source-links [data-callout-type] [data-component-part="callout-icon"] svg {
+  background-color: #7A7A8A !important;
+}
+
+/* Card background matches page background */
+.card {
+  background-color: transparent !important;
+}
+
+/* Force vertical alignment to top for table cells on products page */
+.products-page table td.tdlist,
+.products-page table th.tdlist {
+  vertical-align: top !important;
+}
